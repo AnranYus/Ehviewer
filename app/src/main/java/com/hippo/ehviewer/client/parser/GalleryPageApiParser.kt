@@ -32,7 +32,7 @@ object GalleryPageApiParser {
         val imageUrl = PATTERN_IMAGE_URL.find(res.imageUrl)?.run {
             groupValues[1].trim().unescapeXml()
         }
-        val skipHathKey = PATTERN_SKIP_HATH_KEY.find(res.skipHathKey)?.run {
+        val skipHathKey = PATTERN_SKIP_HATH_KEY.find(res.originImageUrl)?.run {
             groupValues[1].trim().unescapeXml()
         }
         val originImageUrl = PATTERN_ORIGIN_IMAGE_URL.find(res.originImageUrl)?.run {
@@ -50,8 +50,6 @@ object GalleryPageApiParser {
         @SerialName("i3")
         val imageUrl: String,
         @SerialName("i6")
-        val skipHathKey: String,
-        @SerialName("i7")
         val originImageUrl: String,
     )
 
